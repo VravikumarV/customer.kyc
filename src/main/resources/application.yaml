@@ -1,0 +1,31 @@
+server:
+  servlet:
+    application-display-name: kyc
+    context-path: /kyc
+  port: 9090
+
+spring:
+  h2:
+    console:
+      enabled: true
+      settings:
+        trace: true
+  datasource:
+    url: jdbc:h2:file:./data/kyc
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: true
+    defer-datasource-initialization: true
+    show-sql: true
+    database: h2
+    hibernate:
+      ddl-auto: update
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 10MB
+
