@@ -10,6 +10,7 @@ spring:
       enabled: true
       settings:
         trace: true
+        web-allow-others: true
   datasource:
     url: jdbc:h2:file:./data/kyc
     username: sa
