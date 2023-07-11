@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kyc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kyc
+  template:
+    metadata:
+      labels:
+        app: kyc
+    spec:
+      containers:
+        - name: kyc
+          image: kyc:latest
+          ports:
+            - containerPort: 9090
